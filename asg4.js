@@ -461,7 +461,7 @@ function initTextures() {
   }
 
   image1.onload = function() { loadTexture1(image1); };
-  image1.src = 'images/mirror.jpg';
+  image1.src = 'mirror.jpg';
 
   let image2 = new Image();
   if(!image2) {
@@ -469,7 +469,7 @@ function initTextures() {
   }
 
   image2.onload = function() { loadTexture2(image2); };
-  image2.src = 'images/club.jpg';
+  image2.src = 'club.jpg';
 
   let image3 = new Image();
   if(!image3) {
