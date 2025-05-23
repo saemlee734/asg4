@@ -15,7 +15,7 @@
         align-items: center;
         min-height: 100vh;
       }
-      
+
       .container {
         max-width: 1200px;
         width: 100%;
@@ -23,13 +23,13 @@
         flex-direction: column;
         align-items: center;
       }
-      
+
       .header {
         text-align: center;
         margin-bottom: 20px;
         width: 100%;
       }
-      
+
       .disco-title {
         font-size: 36px;
         color: #ff66ff;
@@ -38,18 +38,18 @@
         font-weight: bold;
         letter-spacing: 2px;
       }
-      
+
       .subtitle {
         font-size: 16px;
         color: #ff99ff;
         margin-bottom: 10px;
       }
-      
+
       .author {
         color: #cc99ff;
         margin-bottom: 20px;
       }
-      
+
       .instructions {
         background-color: rgba(51, 0, 102, 0.5);
         padding: 15px;
@@ -59,22 +59,22 @@
         max-width: 900px;
         border-left: 3px solid #ff66ff;
       }
-      
+
       .instructions strong {
         color: #ff99ff;
       }
-      
+
       .canvas-container {
         margin-bottom: 20px;
       }
-      
+
       #webgl {
         background-color: #000033;
         border: 2px solid #ff66ff;
         box-shadow: 0 0 20px #cc00ff;
         border-radius: 8px;
       }
-      
+
       .controls {
         background-color: rgba(51, 0, 102, 0.7);
         padding: 20px;
@@ -83,33 +83,33 @@
         max-width: 900px;
         box-shadow: 0 0 15px rgba(204, 0, 255, 0.3);
       }
-      
+
       .control-section {
         margin-bottom: 20px;
         padding-bottom: 20px;
         border-bottom: 1px dashed #ff66ff;
       }
-      
+
       .control-section:last-child {
         border-bottom: none;
         margin-bottom: 0;
         padding-bottom: 0;
       }
-      
+
       .control-section h3 {
         color: #ff99ff;
         margin-top: 0;
         margin-bottom: 15px;
         font-size: 18px;
       }
-      
+
       .button-group {
         display: flex;
         gap: 10px;
         margin-bottom: 15px;
         flex-wrap: wrap;
       }
-      
+
       input[type="button"] {
         background-color: #ff66ff;
         color: #330033;
@@ -120,24 +120,24 @@
         font-weight: bold;
         transition: all 0.3s;
       }
-      
+
       input[type="button"]:hover {
         background-color: #ff99ff;
         transform: translateY(-2px);
         box-shadow: 0 5px 15px rgba(255, 102, 255, 0.4);
       }
-      
+
       .slider-group {
         margin-bottom: 15px;
       }
-      
+
       .slider-label {
         display: flex;
         justify-content: space-between;
         margin-bottom: 5px;
         color: #ffccff;
       }
-      
+
       input[type="range"] {
         width: 100%;
         height: 8px;
@@ -145,7 +145,7 @@
         border-radius: 5px;
         outline: none;
       }
-      
+
       input[type="range"]::-webkit-slider-thumb {
         -webkit-appearance: none;
         width: 18px;
@@ -155,24 +155,24 @@
         cursor: pointer;
         transition: all 0.2s;
       }
-      
+
       input[type="range"]::-webkit-slider-thumb:hover {
         background: #ff99ff;
         transform: scale(1.2);
       }
-      
+
       .color-picker-group {
         display: flex;
         align-items: center;
         gap: 10px;
         margin-bottom: 10px;
       }
-      
+
       .color-picker-label {
         min-width: 120px;
         color: #ffccff;
       }
-      
+
       input[type="color"] {
         width: 50px;
         height: 30px;
@@ -181,12 +181,12 @@
         cursor: pointer;
         background: #330033;
       }
-      
+
       input[type="color"]::-webkit-color-swatch {
         border: none;
         border-radius: 3px;
       }
-      
+
       .performance-display {
         margin-top: 20px;
         color: #cc99ff;
@@ -202,7 +202,7 @@
         <div class="subtitle">Watch our groovy bunny bust moves under the disco lights!</div>
         <div class="author">Sabrina Lee | saemlee@ucsc.edu</div>
       </div>
-      
+
       <div class="instructions">
         <strong>Dance Floor Controls:</strong> <br>
         - Move around the club with WASD/QE keys or click and drag to look around<br>
@@ -210,13 +210,13 @@
         - "Spotlight" focuses on our dancing bunny star<br>
         - Adjust the disco ball position and lighting colors to set the mood
       </div>
-      
+
       <div class="canvas-container">
         <canvas id="webgl" width="700" height="500">
           Please use a browser that supports "canvas"
         </canvas>
       </div>
-      
+
       <div class="controls">
         <div class="control-section">
           <h3>Visual Effects</h3>
@@ -225,7 +225,7 @@
             <input type="button" value="Normals Off" onclick="g_normalOn = false">
           </div>
         </div>
-        
+
         <div class="control-section">
           <h3>Lighting Controls</h3>
           <div class="button-group">
@@ -235,7 +235,7 @@
             <input type="button" value="Spotlight Off" onclick="g_spotlight.active = false">
           </div>
         </div>
-        
+
         <div class="control-section">
           <h3>Light Position</h3>
           <div class="slider-group">
@@ -260,7 +260,7 @@
             <input type="range" min="-400" max="400" value="0" class="slider" id="light-z">
           </div>
         </div>
-        
+
         <div class="control-section">
           <h3>Lighting Properties</h3>
           <div class="slider-group">
@@ -291,36 +291,37 @@
           </div>
         </div>
       </div>
-      
+
       <div class="performance-display" id="performance-display"></div>
     </div>
-    
+
+    <!-- JavaScript includes with corrected order -->
     <script src="webgl-utils.js"></script>
     <script src="webgl-debug.js"></script>
     <script src="cuon-utils.js"></script>
     <script src="cuon-matrix-cse160.js"></script>
     <script src="circle.js"></script>
+    <script src="asg4.js"></script> <!-- MUST come before cube.js -->
     <script src="cube.js"></script>
     <script src="sphere.js"></script>
     <script src="camera.js"></script>
     <script src="world.js"></script>
-    <script src="asg4.js"></script>
-    
+
     <script>
       // Add event listeners to update slider values
-      document.getElementById('light-x').addEventListener('input', function() {
+      document.getElementById('light-x').addEventListener('input', function () {
         document.getElementById('light-x-value').textContent = this.value;
       });
-      document.getElementById('light-y').addEventListener('input', function() {
+      document.getElementById('light-y').addEventListener('input', function () {
         document.getElementById('light-y-value').textContent = this.value;
       });
-      document.getElementById('light-z').addEventListener('input', function() {
+      document.getElementById('light-z').addEventListener('input', function () {
         document.getElementById('light-z-value').textContent = this.value;
       });
-      document.getElementById('ambient-level').addEventListener('input', function() {
+      document.getElementById('ambient-level').addEventListener('input', function () {
         document.getElementById('ambient-level-value').textContent = this.value;
       });
-      document.getElementById('specular-level').addEventListener('input', function() {
+      document.getElementById('specular-level').addEventListener('input', function () {
         document.getElementById('specular-level-value').textContent = this.value;
       });
     </script>
