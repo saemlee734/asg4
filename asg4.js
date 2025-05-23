@@ -2,6 +2,10 @@
 // saemlee@ucsc.edu
 // asg4.js
 
+// Sabrina Lee
+// saemlee@ucsc.edu
+// asg4.js
+
 function drawTriangle3DUVNormal(vbuffer, uvbuffer, nbuffer, vertices, uv, normals) {
   if (!gl) return;
 
@@ -25,6 +29,41 @@ function drawTriangle3DUVNormal(vbuffer, uvbuffer, nbuffer, vertices, uv, normal
 
   gl.drawArrays(gl.TRIANGLES, 0, vertices.length / 3);
 }
+
+// Modified renderAllShapes skybox section
+function renderAllShapes() {
+  var start_time = performance.now();
+
+  gl.uniform1i(u_normalOn, g_normalOn);
+  gl.uniform1f(u_lightOn, g_lightOn);
+  gl.uniform1f(u_spotlightOn, g_spotlight.active);
+
+  let projMat = camera.projectionMatrix;
+  gl.uniformMatrix4fv(u_ProjectionMatrix, false, projMat.elements);
+
+  let viewMat = camera.viewMatrix;
+  viewMat.setLookAt(
+    camera.eye.elements[0], camera.eye.elements[1], camera.eye.elements[2],
+    camera.at.elements[0], camera.at.elements[1], camera.at.elements[2],
+    camera.up.elements[0], camera.up.elements[1], camera.up.elements[2]
+  );
+  gl.uniform3fv(u_cameraPos, camera.eye.elements);
+  gl.uniformMatrix4fv(u_ViewMatrix, false, viewMat.elements);
+
+  let globalRotMat = new Matrix4();
+  gl.uniformMatrix4fv(u_GlobalRotateMatrix, false, globalRotMat.elements);
+
+  gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+
+  // Render skybox first with depth writing disabled
+  gl.depthMask(false);
+  let sky = new Cube();
+  sky.textureOption = [4, 4, 4, 4, 4, 5];
+  sky.matrix.translate(0, -1, 0);
+  sky.matrix.scale(8, 8, 8);
+  sky.matrix.translate(-0.5, 0, -0.5);
+  sky.renderSkybox();
+  gl.depthMask(true);
 
 var VSHADER_SOURCE = `
   precision mediump float;
