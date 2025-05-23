@@ -1,3 +1,27 @@
+// Utility function needed by Cube class
+function drawTriangle3DUVNormal(vbuffer, uvbuffer, nbuffer, vertices, uvs, normals) {
+  // Bind position buffer
+  gl.bindBuffer(gl.ARRAY_BUFFER, vbuffer);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.DYNAMIC_DRAW);
+  gl.vertexAttribPointer(a_Position, 3, gl.FLOAT, false, 0, 0);
+  gl.enableVertexAttribArray(a_Position);
+
+  // Bind UV buffer
+  gl.bindBuffer(gl.ARRAY_BUFFER, uvbuffer);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(uvs), gl.DYNAMIC_DRAW);
+  gl.vertexAttribPointer(a_UV, 2, gl.FLOAT, false, 0, 0);
+  gl.enableVertexAttribArray(a_UV);
+
+  // Bind normal buffer
+  gl.bindBuffer(gl.ARRAY_BUFFER, nbuffer);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(normals), gl.DYNAMIC_DRAW);
+  gl.vertexAttribPointer(a_Normal, 3, gl.FLOAT, false, 0, 0);
+  gl.enableVertexAttribArray(a_Normal);
+
+  // Draw the triangle
+  gl.drawArrays(gl.TRIANGLES, 0, vertices.length / 3);
+}
+
 class Cube {
   constructor() {
     this.type = 'cube';
