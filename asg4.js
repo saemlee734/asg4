@@ -1048,7 +1048,7 @@ function renderAllShapes() {
   }
 
   let discoBall = new Sphere();
-  discoBall.textureOption = 4;
+  discoBall.textureOption = 3;
   discoBall.matrix.translate(0.1, 2.5, 0.1); 
   discoBall.matrix.scale(0.5, 0.5, 0.5);
   discoBall.matrix.rotate(g_seconds * 50, 0, 1, 0); 
