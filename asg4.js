@@ -437,7 +437,7 @@ function initTextures() {
   }
 
   image1.onload = function() { loadTexture1(image1); };
-  image1.src = './../images/mirror.jpg';
+  image1.src = 'mirror.jpg';
 
   let image2 = new Image();
   if(!image2) {
@@ -445,7 +445,7 @@ function initTextures() {
   }
 
   image2.onload = function() { loadTexture2(image2); };
-  image2.src = './../images/club.jpg';
+  image2.src = 'club.jpg';
 
   let image3 = new Image();
   if(!image3) {
@@ -453,7 +453,7 @@ function initTextures() {
   }
 
   image3.onload = function() { loadTexture3(image3); };
-  image3.src = './../images/floor.jpg';
+  image3.src = 'floor.jpg';
 
   let image4 = new Image();
   if(!image4) {
@@ -461,7 +461,7 @@ function initTextures() {
   }
 
   image4.onload = function() { loadTexture4(image4); };
-  image4.src = './../images/stone.jpg';
+  image4.src = 'stone.jpg';
 
   return true;
 }
