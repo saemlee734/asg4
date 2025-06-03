@@ -46,6 +46,7 @@ saemlee@ucsc.edu
 - Requires WebGL-capable browser
 - Texture images are assumed to be in `images/` directory relative to the project
 - Pointer lock is used for immersive camera control
+- Used Chatgpt and Deepseek
 
 ## 🔧 Setup
 
